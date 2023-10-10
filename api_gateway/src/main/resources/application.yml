@@ -1,0 +1,22 @@
+server:
+  port: 8999
+
+eureka:
+  instance:
+    hostname: localhost
+
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: hotel-management
+          uri: lb://hotel-management
+          predicates:
+            - Path=/auth/**
+        - id: contactus
+          uri: lb://contactus
+          predicates:
+            - Path=/contact/**

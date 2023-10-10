@@ -1,0 +1,12 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: hotel-management
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    eureka-server-port: 8761
